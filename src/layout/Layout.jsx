@@ -1,14 +1,16 @@
 import {Suspense} from "react";
-import {Main} from "./Layout.styled";
 import {Outlet} from "react-router-dom";
+import {Container, Main} from "./Layout.styled";
 
 const Layout = () => {
 	return (
-		<Main>
-			<Suspense>
-				<Outlet />
-			</Suspense>
-		</Main>
+		<Container>
+			<Main>
+				<Suspense>
+					<Outlet />
+				</Suspense>
+			</Main>
+		</Container>
 	);
 };
 

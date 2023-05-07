@@ -1,16 +1,22 @@
-import {UserCard} from "./Card.styled";
+import {Avatar, Logo, UserCard, Border, Tweets, Followers, Button} from "./Card.styled";
 
 /* eslint-disable react/prop-types */
 const Card = ({tweets, avatar, followers}) => {
+	const formattedFollowers = () => followers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
 	return (
 		<UserCard>
-			<img src={avatar}></img>
-			<p>
+			<Logo />
+			<Border>
+				<Avatar src={avatar} width="62px" height="62px"></Avatar>
+			</Border>
+			<Tweets>
 				<span>{tweets}</span>Tweets
-			</p>
-			<p>
-				<span>{followers}</span>Followers
-			</p>
+			</Tweets>
+			<Followers>
+				<span>{formattedFollowers()}</span>Followers
+			</Followers>
+			<Button>Follow</Button>
 		</UserCard>
 	);
 };
