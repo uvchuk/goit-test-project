@@ -1,8 +1,8 @@
 {
-	"name": "vite-react-template",
+	"name": "goit-test-project",
 	"version": "1.0.0",
 	"private": true,
-	"homepage": "https://uvchuk.github.io/vite-react-template/",
+	"homepage": "https://uvchuk.github.io/goit-test-project/",
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
@@ -12,7 +12,10 @@
 	},
 	"dependencies": {
 		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react-dom": "^18.2.0",
+		"react-router-dom": "^6.11.1",
+		"redux-persist": "^6.0.0",
+		"styled-components": "^6.0.0-rc.1"
 	},
 	"devDependencies": {
 		"@types/react": "^18.0.28",

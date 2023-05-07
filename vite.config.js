@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react";
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [react(), jsconfigPaths()],
-	base: "/vite-react-template/",
+	base: "/goit-test-project/",
 	// build: {
 	// 	rollupOptions: {
 	// 		output: {
