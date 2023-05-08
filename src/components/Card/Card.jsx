@@ -1,8 +1,10 @@
+import {useFollowUserMutation} from "services/API/tweetsAPI";
 import {Avatar, Logo, UserCard, Border, Tweets, Followers, Button} from "./Card.styled";
 
 /* eslint-disable react/prop-types */
-const Card = ({tweets, avatar, followers}) => {
+const Card = ({id, tweets, avatar, followers, isFollowed}) => {
 	const formattedFollowers = () => followers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	const [followUser, {isLoading}] = useFollowUserMutation();
 
 	return (
 		<UserCard>
@@ -16,7 +18,9 @@ const Card = ({tweets, avatar, followers}) => {
 			<Followers>
 				<span>{formattedFollowers()}</span>Followers
 			</Followers>
-			<Button>Follow</Button>
+			<Button onClick={() => followUser({id, followers, isFollowed})} disabled={isLoading}>
+				{isFollowed ? "Following" : "Follow"}
+			</Button>
 		</UserCard>
 	);
 };
