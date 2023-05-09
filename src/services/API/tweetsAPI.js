@@ -7,7 +7,7 @@ export const tweetsAPI = createApi({
 	}),
 	endpoints: builder => ({
 		fetchUsers: builder.query({
-			query: ({page, limit}) => `/users?page=${page}&limit=${limit}`,
+			query: ({page, limit, filter}) => `/users?page=${page}&limit=${limit}&filter=${filter}`,
 			providesTags: ["Users"],
 		}),
 		followUser: builder.mutation({

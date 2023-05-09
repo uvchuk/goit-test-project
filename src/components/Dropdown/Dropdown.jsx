@@ -1,15 +1,17 @@
-import {DropdownBtn, DropdownContent, DropdownList} from "./Dropdown.styled";
+import {useDispatch} from "react-redux";
+import {filterTweets} from "redux/slice";
 
 const Dropdown = () => {
+	const dispatch = useDispatch();
 	return (
-		<DropdownList>
-			<DropdownBtn>Filter</DropdownBtn>
-			<DropdownContent class="dropdown-content">
-				<a href="#">Link 1</a>
-				<a href="#">Link 2</a>
-				<a href="#">Link 3</a>
-			</DropdownContent>
-		</DropdownList>
+		<div className="dropdown">
+			<button className="dropbtn">Filter</button>
+			<div className="dropdown-content">
+				<button onClick={() => dispatch(filterTweets(""))}>all</button>
+				<button onClick={() => dispatch(filterTweets("false"))}>follow</button>
+				<button onClick={() => dispatch(filterTweets("true"))}>followings</button>
+			</div>
+		</div>
 	);
 };
 

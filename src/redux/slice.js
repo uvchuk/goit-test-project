@@ -2,7 +2,7 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const someExtraDataSlice = createSlice({
 	name: "tweetsAPP",
-	initialState: {users: [], page: 1, limit: 3},
+	initialState: {users: [], page: 1, limit: 3, filter: ""},
 	reducers: {
 		syncUsers(state, action) {
 			action.payload.forEach(user => {
@@ -17,8 +17,13 @@ const someExtraDataSlice = createSlice({
 		syncPage(state, action) {
 			state.page = action.payload;
 		},
+		filterTweets(state, action) {
+			state.filter = action.payload;
+			state.page = 1;
+			state.users = [];
+		},
 	},
 });
 
 export const tweetsReducer = someExtraDataSlice.reducer;
-export const {syncUsers, loadMore, syncPage} = someExtraDataSlice.actions;
+export const {syncUsers, syncPage, filterTweets} = someExtraDataSlice.actions;

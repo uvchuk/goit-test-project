@@ -8,6 +8,7 @@ export const Container = styled.div`
 `;
 
 export const Main = styled.main`
+	position: relative;
 	overflow: auto;
 	min-height: 70vh;
 `;
