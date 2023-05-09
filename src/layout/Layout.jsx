@@ -1,13 +1,15 @@
 import {Suspense} from "react";
-import {Outlet} from "react-router-dom";
+import {Outlet, useLocation} from "react-router-dom";
 import {Container, Main} from "./Layout.styled";
 
 const Layout = () => {
+	const location = useLocation();
+
 	return (
 		<Container>
 			<Main>
 				<Suspense>
-					<Outlet />
+					<Outlet state={location} />
 				</Suspense>
 			</Main>
 		</Container>
