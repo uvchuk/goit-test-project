@@ -1,10 +1,8 @@
+/* eslint-disable react/prop-types */
 import Card from "components/Card/Card";
-import {useFetchUsersQuery} from "services/API/tweetsAPI";
 import {List} from "./CardList.styled";
 
-const CardList = () => {
-	const {data: users} = useFetchUsersQuery();
-
+const CardList = ({users}) => {
 	return (
 		<List>
 			{users?.map(user => (

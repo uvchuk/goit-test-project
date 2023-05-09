@@ -1,9 +1,11 @@
 import {configureStore} from "@reduxjs/toolkit";
 import {tweetsAPI} from "services/API/tweetsAPI";
+import {tweetsReducer} from "./slice";
 
 export const store = configureStore({
 	reducer: {
 		[tweetsAPI.reducerPath]: tweetsAPI.reducer,
+		tweetsAPP: tweetsReducer,
 	},
 	middleware: getDefaultMiddleware =>
 		getDefaultMiddleware({
