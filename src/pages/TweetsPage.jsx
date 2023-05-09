@@ -6,6 +6,7 @@ import {Link, useLocation} from "react-router-dom";
 import {useFetchUsersQuery} from "services/API/tweetsAPI";
 import CardList from "components/CardList/CardList";
 import LoadMoreBtn from "components/LoadMoreBtn/LoadMoreBtn";
+import {DropdownList} from "components/Dropdown/Dropdown.styled";
 
 const TweetsPage = () => {
 	const dispatch = useDispatch();
@@ -28,6 +29,7 @@ const TweetsPage = () => {
 	return (
 		<>
 			<Link to={state ? state : "/"}>Back</Link>
+			<DropdownList />
 			<CardList users={users} />
 			{data?.length === limit && <LoadMoreBtn handleClick={handleClick} />}
 		</>
